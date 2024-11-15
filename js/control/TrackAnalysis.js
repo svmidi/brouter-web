@@ -417,7 +417,7 @@ BR.TrackAnalysis = L.Class.extend({
                 data-subtype="${data[index].subtype}" \
                 data-distance="${data[index].distance}"></tr>`);
             $row.append(`<td class="track-analysis-title">${data[index].formatted_name}</td>`);
-            $row.append(`<td class="track-analysis-distance">${this.formatDistance(data[index].distance)} km</td>`);
+            $row.append(`<td class="track-analysis-distance">${this.formatDistance(data[index].distance)} ${i18next.t('footer.kilometer-abbrev')}</td>`);
             $tbody.append($row);
             totalDistance += data[index].distance;
         }
@@ -430,7 +430,7 @@ BR.TrackAnalysis = L.Class.extend({
                         $(
                             `<td class="track-analysis-distance">${this.formatDistance(
                                 this.totalRouteDistance - totalDistance
-                            )} km</td>`
+                            )} ${i18next.t('footer.kilometer-abbrev')}</td>`
                         )
                     )
             );
@@ -446,7 +446,7 @@ BR.TrackAnalysis = L.Class.extend({
                     $(
                         `<td class="track-analysis-distance track-analysis-distance-total">${this.formatDistance(
                             totalDistance
-                        )} km</td>`
+                        )} ${i18next.t('footer.kilometer-abbrev')}</td>`
                     )
                 )
         );
