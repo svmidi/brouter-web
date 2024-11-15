@@ -159,7 +159,10 @@ BR.TrackAnalysis = L.Class.extend({
                             let trackType = '';
                             if (highwayType === 'track') {
                                 trackType = this.getTrackType(wayTags);
-                                highwayType = 'Track ' + trackType;
+                                highwayType = i18next.t(
+                                        'sidebar.analysis.data.highway.' + highwayType,
+                                        highwayType
+                                    ) + ' ' + trackType;
                             }
                             if (typeof analysis.highway[highwayType] === 'undefined') {
                                 analysis.highway[highwayType] = {
